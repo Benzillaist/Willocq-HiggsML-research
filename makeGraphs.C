@@ -29,11 +29,11 @@ void makeGraphs()
 
     auto openFile2 = TFile::Open(fileName2);
 
-    TH1F *higgs_pt1 = new TH1F("hpt1", filePrefix1 + ":Higgs pt", 50, 0, 1000000);
-    TH1F *higgs_pt2 = new TH1F("hpt2", filePrefix2 + ":Higgs pt", 50, 0, 1000000);
+    TH1F *higgs_pt1 = new TH1F("hpt1", filePrefix1 + ":Higgs pt", 25, 0, 1000000);
+    TH1F *higgs_pt2 = new TH1F("hpt2", filePrefix2 + ":Higgs pt", 25, 0, 1000000);
 
-    TH1F *dR1 = new TH1F("dR1", filePrefix1 + ":R", 50, 0, 1.2);
-    TH1F *dR2 = new TH1F("dR2", filePrefix2 + ":R", 50, 0, 1.2);
+    TH1F *dR1 = new TH1F("dR1", filePrefix1 + ":R", 25, 0, 1.2);
+    TH1F *dR2 = new TH1F("dR2", filePrefix2 + ":R", 25, 0, 1.2);
 
     THStack *hs = new THStack("hs", "Transverse momenta of Higgs bosons ;p_{T} (MeV);Count");
 
@@ -61,10 +61,10 @@ void makeGraphs()
     }
 
     higgs_pt1->SetLineColor(kBlue);
-    higgs_pt2->SetLineColor(kBlack);
+    higgs_pt2->SetLineColor(kRed);
 
     dR1->SetLineColor(kBlue);
-    dR2->SetLineColor(kBlack);
+    dR2->SetLineColor(kRed);
 
     higgs_pt1->SetLineWidth(2);
     higgs_pt2->SetLineWidth(2);
@@ -84,7 +84,7 @@ void makeGraphs()
     c->Close();
     c = new TCanvas();
 
-    hs = new THStack("hs", "R candidate values ;Angle between jets? (rads);Count");
+    hs = new THStack("hs", "R candidate values ;Angle between muon and W jet (rads);Count");
 
     hs->Add(dR1);
     hs->Add(dR2);
