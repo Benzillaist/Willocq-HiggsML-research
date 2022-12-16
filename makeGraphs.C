@@ -10,7 +10,7 @@ void makeGraphs()
 
     auto fileName2 = "mc16e_ttbar.root";
     auto treeName2 = "MyLCTuple";
-    TString filePrefix2 = "Background";
+    TString filePrefix2 = "tt background";
 
     TString saveDir = "mc16e_Graphs";
 
